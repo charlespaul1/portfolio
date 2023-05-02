@@ -27,6 +27,8 @@ const Navbar = () => {
     window.addEventListener("resize", updateIsMobile);
     return () => window.removeEventListener("resize", updateIsMobile);
   }, [])
+ 
+  
   return (
     <Box
     position="fixed"
@@ -34,7 +36,9 @@ const Navbar = () => {
     left={0}
     right={0}
     zIndex={1}
-    bg="rgba(22, 42, 64, 1)"
+    bg="rgba(22, 42, 64, 0.7)"
+
+    
  >
       <Flex
       mx='auto'
@@ -63,16 +67,22 @@ const Navbar = () => {
           position={isMobile ? "absolute" : "static"} 
           top={isMobile ? "100px" : "0"} 
           left={isMobile ? "0" : "auto"} zIndex={20} 
-          p={isMobile ? "20px" : "0"} 
+          p={isMobile ? "20px" : "0"}
+          justifyContent={isMobile ? "center" : "flex-end"}
+          alignItems={isMobile ? "center" : "flex-end"}
+          backgroundColor={isMobile ? "rgba(0, 0, 0, 0.8)" : "transparent"}
+          animation={isMobile ? "1s ease-in-out 10s 2 slideInFromLeft" : "none"}
+
           >
             {links.map((link, index) => (
               <Box key={index}
               p={isMobile ? "10px" : "0"} 
-              _hover={{cursor: 'pointer', color: "gold" }}
+              _hover={isMobile ? {color: 'gold'} : {color: 'gold'}}
               cursor='pointer'
               fontWeight='bold'
               padding={isMobile ? "10px" : "20px"}
-              color={isMobile ? 'black' : 'white'}
+              color={isMobile ? 'white' : 'white'}
+              
 
               >
                 <a href={link.path}>{link.name}</a></Box>

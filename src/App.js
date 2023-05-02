@@ -6,9 +6,11 @@ import Services from './Pages/Services';
 import Contact from './Pages/Contact';
 import Navbar from './Components/Navbar';   
 import { ChakraProvider } from "@chakra-ui/react"
+import './App.css'
 
 function App() {
   return (
+    <div className="App">
     <ChakraProvider>
     <Navbar />
     <Routes>
@@ -18,10 +20,14 @@ function App() {
       <Route path="/services" element={<Services/>}/>
       <Route path="/contact" element={<Contact/>}/>
     </Routes>
+    <About />
+    <Projects />
+    <Services />
+    <Contact />
     
     
     </ChakraProvider>
-  
+  </div>
   );
 }
 
