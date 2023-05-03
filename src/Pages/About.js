@@ -19,7 +19,9 @@ const About = () => {
           <TypingEffect text= 'About Me' color='white' />
         </Text>
         
-        <Text mb="1rem">
+        <Text mb="1rem"
+        fontSize={{base: 'sm', md:'2xl'}}
+        >
           As a frontend React developer, I have experience in building
           responsive and user-friendly web applications using React, Chakra UI,
           and other modern web technologies.I also do web design using Figma. I'm passionate about creating

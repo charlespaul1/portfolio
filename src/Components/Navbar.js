@@ -37,9 +37,10 @@ const Navbar = () => {
     right={0}
     zIndex={1}
     bg="rgba(22, 42, 64, 0.7)"
+    backdropBlur='2px'
+    backdropFilter="blur(5px)"
 
-    
- >
+     >
       <Flex
       mx='auto'
       px={6}
@@ -70,8 +71,8 @@ const Navbar = () => {
           p={isMobile ? "20px" : "0"}
           justifyContent={isMobile ? "center" : "flex-end"}
           alignItems={isMobile ? "center" : "flex-end"}
-          backgroundColor={isMobile ? "rgba(0, 0, 0, 0.8)" : "transparent"}
-          animation={isMobile ? "1s ease-in-out 10s 2 slideInFromLeft" : "none"}
+          // backgroundColor={isMobile ? "rgba(0, 0, 0, 0.8)" : "transparent"}
+          // animation={isMobile ? "1s ease-in-out 10s 2 slideInFromLeft" : "none"}
 
           >
             {links.map((link, index) => (
