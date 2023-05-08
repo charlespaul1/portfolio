@@ -18,14 +18,15 @@ const TypingEffect = ({ text }) => {
 
   return (
     <Text
-      fontSize="32px"
+      fontSize={{ base: "lg", md: "4xl" }}
       top={{ base: "auto", md: "50%" }}
-      fontWeight="extrabold"
+      fontWeight={{ base: "bold", md: "bold" }}
+      paddingLeft={{ base: '0', md:'0'}}
       textAlign="center"
       whiteSpace="nowrap"
       // make excess text to go to next line
-      overflow="hidden"
-      display="inline-block"
+      overflow={{ base: "visible", md: "visible" }}
+      display={{ base: "block", md: "block" }}
       verticalAlign="bottom"
       _after={{
         content: "'|'",

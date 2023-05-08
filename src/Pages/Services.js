@@ -66,11 +66,15 @@ const Skills = () => {
         Stack
       </Heading>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-        <Flex direction="column" alignItems="center" justifyContent="center">
-          <Text fontSize="2xl" mb={2}>
+        <Flex direction="column"  alignItems="center" justifyContent="center">
+          <Text  mb={2}
+          fontSize={{ base: "xl", md: "2xl" }}
+          flexWrap={{ base: "wrap", md: "nowrap" }}>
             Programming Languages and Frameworks
           </Text>
-          <Flex alignItems="center" justifyContent="center">
+          <Flex  direction='row' flexWrap='wrap'
+          display={{ base: "flex", md: "flex" }}
+          alignItems="center" justifyContent="center">
             {skills.map((skill) => (
               <Box key={skill.name} p={4} >
                 {skill.icon}
@@ -97,12 +101,7 @@ const Skills = () => {
                 color='white'
                 _hover={{ textDecoration: "underline", color:"blue" }}
               >
-                {/* <Image
-                  src={`https://www.udemy.com/staticx/udemy/images/v6/certificate/cert-grad.svg`}
-                  alt="Certificate"
-                  boxSize="64px"
-                  mr={4}
-                /> */}
+               
                 <Link href={skill.certification} isExternal>
                   {skill.name} Certification
                 </Link>

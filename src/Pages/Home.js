@@ -7,11 +7,17 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import {FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import {FaGithub, FaTwitter, FaLinkedin, FaArrowCircleUp } from "react-icons/fa";
 import pic from "../assets/pic.jpg";
 import TypingEffect from "../Components/Typing";
 
 const Home = () => {
+  const handleScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
   return (
     <Flex
       direction={{ base: "column", md: "row" }}
@@ -40,7 +46,7 @@ const Home = () => {
         />
       </Box>
       {/* Right Side */}
-      <Box w={{ base: "full", md: "50%" }} textAlign={{ base: "center", md: "center" }} 
+      <Box w={{ base: "full", md: "60%" }} textAlign={{ base: "center", md: "center" }} 
       fontSize={{base: 'sm', md:'xl'}}
       marginBottom='0'
       marginLeft={{base: '0', md:'0'}}
@@ -48,7 +54,8 @@ const Home = () => {
         
         <TypingEffect text={`Hello, i'm Charlespaul Masika Wabomba`} />
         
-        <Text fontSize="xl" mb={8}>
+        <Text fontSize={{base: 'sm', md:'xl'}}
+         mb={8}>
          A front-end developer with experience and knowledge in Front-end web development and design. I am a Tech enthusiast with passion in
           building excellent quality software that improves the lives of people.
 
@@ -73,7 +80,7 @@ const Home = () => {
         </Button>
         <Flex align="center"
         justifyContent='center'
-        padding={8}
+        padding={{base: '0', md:'4'}}
          >
           <Link href="https://github.com/charlespaul1" isExternal mr={4}>
             <Box as={FaGithub} size="32px" color="black"
@@ -89,12 +96,12 @@ const Home = () => {
           </Link>
         </Flex>
       </Box>
+      <FaArrowCircleUp
+      onClick={handleScrollTop}
+      bott
       
-      
-
-
-      
-    </Flex>
+      />
+     </Flex>
   );
 };
 
